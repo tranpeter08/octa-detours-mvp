@@ -8,13 +8,14 @@ export default function Detours() {
   const date = format(new Date(), 'MMMM do, uuuu');
 
   return (
-    <>
+    <div className={styles.container}>
       <Head>
         <title>OCTA Detour for Operators MVP</title>
         <meta name="description" content="MVP for OCTA Detours" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <DetourModal openModal={open} setOpen={setOpen} />
       <h1 className={commonStyles.centerText}>Detour Summary</h1>
       <h2 className={commonStyles.centerText}>{date}</h2>
       <div className={commonStyles.centerChildren}>
@@ -22,6 +23,6 @@ export default function Detours() {
       </div>
 
       <footer className={styles.footer}></footer>
-    </>
+    </div>
   );
 }
