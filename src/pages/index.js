@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import DetourTable from '../components/DetourTable';
+import TrafficAdvisoryTable from '../components/TrafficAdvisoryTable';
 import commonStyles from '../styles/Common.module.css';
-import {format} from 'date-fns';
+import MainContext from '../context/MainContext';
+import DetourModal from '../components/DetourModal';
 
 export default function Detours() {
-  const date = format(new Date(), 'MMMM do, uuuu');
-
   return (
     <div className={styles.container}>
       <Head>
@@ -14,13 +14,17 @@ export default function Detours() {
         <meta name="description" content="MVP for OCTA Detours" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className={commonStyles.centerText}>Detour Summary</h1>
-      <h2 className={commonStyles.centerText}>{date}</h2>
-      <div className={commonStyles.centerChildren}>
-        <DetourTable />
-      </div>
 
-      <footer className={styles.footer}></footer>
+      <MainContext.Provider>
+        <DetourModal />
+        <h1 className={commonStyles.centerText}>Detour Summary</h1>
+        <div className={commonStyles.centerChildren}>
+          <DetourTable />
+          <TrafficAdvisoryTable />
+        </div>
+
+        <footer className={styles.footer}></footer>
+      </MainContext.Provider>
     </div>
   );
 }
