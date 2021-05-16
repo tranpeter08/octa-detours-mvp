@@ -4,4 +4,5 @@
 .tableContainer {
   max-width: 800px;
   min-width: 400px;
+  margin: 20px 0;
 }
