@@ -1,0 +1,28 @@
+.iframe {
+  width: 90vw;
+  height: 90vh;
+}
+
+.modal {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.container {
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  margin-bottom: 20px;
+  background-color: rgb(0, 101, 252);
+  color: white;
+}
+
+.button:hover {
+  cursor: pointer;
+}
