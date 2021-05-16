@@ -1,6 +1,6 @@
-.dataRow:nth-child(2n - 1) {
+/* .dataRow:nth-child(2n - 1) {
   background-color: lightgray;
-}
+} */
 
 .dataRow:hover {
   background-color: grey;
